@@ -51,11 +51,11 @@ class _BikeHomePageState extends State<BikeHomePage> {
                       return Row(
                         children: [
                           const SizedBox(width: 20.0),
-                          Expanded(
+                          const Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
+                              children: [
                                 Text(
                                   "Buy, Sell, Exchange",
                                   style: TextStyle(
@@ -150,11 +150,12 @@ class CategoryChooser extends StatelessWidget {
               return GestureDetector(
                 onTap: onTop != null ? () => onTop!(type) : null,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
                       width: 60.0,
                       height: 60.0,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(
                                 "https://imgd.aeplcdn.com/1056x594/n/cw/ec/53743/42-right-front-three-quarter-3.jpeg?isig=0&q=80&wm=3"),
@@ -164,7 +165,7 @@ class CategoryChooser extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 5.0,
+                      height: 10.0,
                     ),
                     Text(type,
                         style: const TextStyle(fontWeight: FontWeight.w500))
@@ -173,7 +174,7 @@ class CategoryChooser extends StatelessWidget {
               );
             },
             separatorBuilder: (context, index) => const SizedBox(
-                  width: 10.0,
+                  width: 30.0,
                 ),
             itemCount: types.length));
   }
