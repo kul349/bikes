@@ -1,4 +1,6 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -135,7 +137,7 @@ class CategoryChooser extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 100,
+        height: 110,
         child: ListView.separated(
             padding:
                 const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
@@ -172,5 +174,34 @@ class CategoryChooser extends StatelessWidget {
                   width: 30.0,
                 ),
             itemCount: types.length));
+  }
+}
+
+class BikeListItem extends StatelessWidget {
+  final String? thirdTitle;
+  final bool imageRight;
+  final double elevation;
+  final void Function()? onTap;
+  const BikeListItem({
+    Key? key,
+    this.thirdTitle,
+    required this.imageRight,
+    required this.elevation,
+    this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: elevation,
+      child:InkWell(borderRadius: BorderRadius.circular(4.0),
+      onTap: onTap,
+      child:Row(
+        children: [
+          
+        ],
+      )
+      )
+    );
   }
 }
